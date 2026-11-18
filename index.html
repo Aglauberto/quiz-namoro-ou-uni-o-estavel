@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Quiz: Namoro ou União Estável? | Guia Prático</title>
+  <meta name="description" content="Descubra as consequências jurídicas do seu relacionamento. Responda 5 perguntas rápidas e conheça seus direitos patrimoniais.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Main Container -->
+  <main class="quiz-app" id="quizApp">
+    
+    <!-- Top Navigation Header (Progress & Back) -->
+    <header class="quiz-header" id="quizHeader" aria-label="Navegação do Quiz">
+      <button type="button" class="btn-back" id="btnBack" aria-label="Voltar para a etapa anterior" style="visibility: hidden;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+        <span>Voltar</span>
+      </button>
+
+      <div class="header-indicator" id="headerIndicator">
+        <span class="step-label" id="stepCounter">Etapa 1 de 9</span>
+      </div>
+
+      <div class="progress-bar-container" id="progressBarContainer" role="progressbar" aria-valuenow="11" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar-fill" id="progressBarFill" style="width: 11%;"></div>
+      </div>
+    </header>
+
+    <!-- Quiz Screens Slider -->
+    <div class="screens-wrapper">
+
+      <!-- ==========================================
+           TELA 1: Boas-vindas
+           ========================================== -->
+      <section class="screen active" id="screen-1" data-step="1" aria-labelledby="title-step-1">
+        <div class="screen-content welcome-layout">
+          <div class="badge-tag">
+            <span class="gold-icon">⚖️</span> Avaliação Jurídica Informativa
+          </div>
+
+          <h1 class="screen-title welcome-title" id="title-step-1">
+            Seu relacionamento pode ter <span class="highlight-wine">consequências jurídicas</span> que você não sabe.
+          </h1>
+
+          <p class="screen-subtitle">
+            Responda 5 perguntas rápidas e descubra o que você precisa saber sobre seus direitos, patrimônio e segurança.
+          </p>
+
+          <div class="welcome-card-highlight">
+            <div class="feature-item">
+              <div class="feature-bullet">✓</div>
+              <div class="feature-text"><strong>Sem termos técnicos difíceis</strong></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-bullet">✓</div>
+              <div class="feature-text"><strong>Tempo estimado: 1 minuto</strong></div>
+            </div>
+          </div>
+
+          <div class="cta-actions">
+            <button type="button" class="btn-primary btn-pulse" id="btnStartQuiz">
+              <span>COMEÇAR</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <div class="trust-badge">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <span>100% confidencial e anônimo</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TELA 2: Pergunta 1
+           ========================================== -->
+      <section class="screen" id="screen-2" data-step="2" aria-labelledby="title-step-2">
+        <div class="screen-content question-layout">
+          <h2 class="question-title" id="title-step-2">Qual é sua situação atual?</h2>
+          <p class="question-hint">Toque na opção mais próxima da sua realidade:</p>
+
+          <div class="options-grid" role="group" aria-label="Opções para a pergunta 1">
+            <button type="button" class="quiz-option" data-value="namoro-separados">
+              <span class="option-indicator">A</span>
+              <span class="option-text">Namoro, mas moramos separados.</span>
+            </button>
+            <button type="button" class="quiz-option" data-value="namoro-juntos">
+              <span class="option-indicator">B</span>
+              <span class="option-text">Namoro e moramos juntos.</span>
+            </button>
+            <button type="button" class="quiz-option" data-value="planejando-juntos">
+              <span class="option-indicator">C</span>
+              <span class="option-text">Estamos planejando morar juntos.</span>
+            </button>
+            <button type="button" class="quiz-option" data-value="terminei">
+              <span class="option-indicator">D</span>
+              <span class="option-text">Terminei um relacionamento.</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TELA 3: Pergunta 2
+           ========================================== -->
+      <section class="screen" id="screen-3" data-step="3" aria-labelledby="title-step-3">
+        <div class="screen-content question-layout">
+          <h2 class="question-title" id="title-step-3">O que vocês já compartilham?</h2>
+          <p class="question-hint">Escolha a principal alternativa:</p>
+
+          <div class="options-grid" role="group" aria-label="Opções para a pergunta 2">
+            <button type="button" class="quiz-option" data-value="contas-despesas">
+              <span class="option-indicator">A</span>
+              <span class="option-text">Contas e despesas.</span>
+            </button>
+            <button type="button" class="quiz-option" data-value="imoveis-bens">
+              <span class="option-indicator">B</span>
+              <span class="option-text">Imóveis ou outros bens.</span>
+            </button>
+            <button type="button" class="quiz-option" data-value="filhos-responsabilidades">
+              <span class="option-indicator">C</span>
+              <span class="option-text">Filhos e responsabilidades.</span>
+            </button>
+            <button type="button" class="quiz-option" data-value="nada-disso">
+              <span class="option-indicator">D</span>
+              <span class="option-text">Ainda não compartilhamos nada disso.</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TELA 4: Evidência Visual 1
+           ========================================== -->
+      <section class="screen" id="screen-4" data-step="4" aria-labelledby="title-step-4">
+        <div class="screen-content visual-layout">
+          <h2 class="visual-headline" id="title-step-4">
+            Morar junto não significa automaticamente união estável!
+          </h2>
+
+          <!-- Ilustração Vetorial: Casal entre duas casas -->
+          <div class="illustration-box" aria-hidden="true">
+            <svg viewBox="0 0 320 180" class="svg-houses" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#E5C378" />
+                  <stop offset="50%" stop-color="#C5A059" />
+                  <stop offset="100%" stop-color="#8F6E2C" />
+                </linearGradient>
+                <linearGradient id="wineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#6E1B24" />
+                  <stop offset="100%" stop-color="#420B11" />
+                </linearGradient>
+              </defs>
+
+              <!-- Casa 1 (Esquerda) -->
+              <g class="house house-left">
+                <polygon points="30,85 75,45 120,85" fill="#E8DEC8" stroke="#4A0E17" stroke-width="3" stroke-linejoin="round"/>
+                <rect x="40" y="85" width="70" height="70" rx="3" fill="#FAF7F2" stroke="#4A0E17" stroke-width="3"/>
+                <rect x="65" y="115" width="20" height="40" rx="2" fill="url(#wineGrad)"/>
+                <circle cx="80" cy="136" r="2" fill="#E5C378"/>
+                <rect x="48" y="96" width="16" height="16" rx="2" fill="#E8DEC8" stroke="#4A0E17" stroke-width="1.8"/>
+                <line x1="56" y1="96" x2="56" y2="112" stroke="#4A0E17" stroke-width="1.5"/>
+                <line x1="48" y1="104" x2="64" y2="104" stroke="#4A0E17" stroke-width="1.5"/>
+              </g>
+
+              <!-- Conexão / Linha de dúvida -->
+              <path d="M125 120 Q160 85 195 120" stroke="url(#goldGrad)" stroke-width="3.5" stroke-dasharray="6 6"/>
+              
+              <!-- Casal no Centro -->
+              <g class="couple-center" transform="translate(136, 68)">
+                <!-- Balão de dúvida / reflexão -->
+                <circle cx="24" cy="-5" r="14" fill="#FAF7F2" stroke="#C5A059" stroke-width="2"/>
+                <text x="24" y="0" text-anchor="middle" font-size="14" font-weight="bold" fill="#4A0E17">?</text>
+
+                <!-- Pessoa 1 -->
+                <circle cx="14" cy="22" r="7" fill="#4A0E17"/>
+                <path d="M6 46 C6 35 22 35 22 46 Z" fill="#6E1B24"/>
+
+                <!-- Pessoa 2 -->
+                <circle cx="34" cy="22" r="7" fill="#8F6E2C"/>
+                <path d="M26 46 C26 35 42 35 42 46 Z" fill="#C5A059"/>
+              </g>
+
+              <!-- Casa 2 (Direita) -->
+              <g class="house house-right">
+                <polygon points="200,85 245,45 290,85" fill="#E8DEC8" stroke="#4A0E17" stroke-width="3" stroke-linejoin="round"/>
+                <rect x="210" y="85" width="70" height="70" rx="3" fill="#FAF7F2" stroke="#4A0E17" stroke-width="3"/>
+                <rect x="235" y="115" width="20" height="40" rx="2" fill="url(#wineGrad)"/>
+                <circle cx="250" cy="136" r="2" fill="#E5C378"/>
+                <rect x="256" y="96" width="16" height="16" rx="2" fill="#E8DEC8" stroke="#4A0E17" stroke-width="1.8"/>
+                <line x1="264" y1="96" x2="264" y2="112" stroke="#4A0E17" stroke-width="1.5"/>
+                <line x1="256" y1="104" x2="272" y2="104" stroke="#4A0E17" stroke-width="1.5"/>
+              </g>
+
+              <!-- Chão -->
+              <line x1="20" y1="156" x2="300" y2="156" stroke="#C5A059" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <div class="visual-explanation-card">
+            <div class="quote-symbol">“</div>
+            <p class="visual-support-text">
+              <strong>Morar separado também não<br>impede seu reconhecimento.</strong>
+            </p>
+            <p class="visual-detail">
+              A lei analisa a intenção real de constituir família e a notoriedade do vínculo, não apenas o mesmo endereço.
+            </p>
+          </div>
+
+          <div class="cta-actions">
+            <button type="button" class="btn-primary" data-action="next">
+              <span>CONTINUAR</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TELA 5: Pergunta 3
+           ========================================== -->
+      <section class="screen" id="screen-5" data-step="5" aria-labelledby="title-step-5">
+        <div class="screen-content question-layout">
+          <h2 class="question-title" id="title-step-5">
+            Se vocês terminassem hoje, você saberia como ficariam os bens?
+          </h2>
+          <p class="question-hint">Seja sincero(a) com sua resposta:</p>
+
+          <div class="options-grid" role="group" aria-label="Opções para a pergunta 3">
+            <button type="button" class="quiz-option" data-value="conheco-direitos">
+              <span class="option-indicator">A</span>
+              <span class="option-text">Sim, conheço meus direitos.</span>
+            </button>
+            <button type="button" class="quiz-option" data-value="algumas-duvidas">
+              <span class="option-indicator">B</span>
+              <span class="option-text">Tenho algumas dúvidas.</span>
+            </button>
+            <button type="button" class="quiz-option" data-value="nao-faco-ideia">
+              <span class="option-indicator">C</span>
+              <span class="option-text">Não faço ideia.</span>
+            </button>
+            <button type="button" class="quiz-option" data-value="sem-bens-comum">
+              <span class="option-indicator">D</span>
+              <span class="option-text">Não temos bens em comum.</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TELA 6: Pergunta 4
+           ========================================== -->
+      <section class="screen" id="screen-6" data-step="6" aria-labelledby="title-step-6">
+        <div class="screen-content question-layout">
+          <h2 class="question-title" id="title-step-6">
+            Você sabe para que serve um contrato de namoro?
+          </h2>
+          <p class="question-hint">Escolha a opção correspondente:</p>
+
+          <div class="options-grid" role="group" aria-label="Opções para a pergunta 4">
+            <button type="button" class="quiz-option" data-value="sei-contrato">
+              <span class="option-indicator">A</span>
+              <span class="option-text">Sim.</span>
+            </button>
+            <button type="button" class="quiz-option" data-value="ideia-contrato">
+              <span class="option-indicator">B</span>
+              <span class="option-text">Tenho uma ideia.</span>
+            </button>
+            <button type="button" class="quiz-option" data-value="nao-conheco-contrato">
+              <span class="option-indicator">C</span>
+              <span class="option-text">Não conheço.</span>
+            </button>
+            <button type="button" class="quiz-option" data-value="nunca-ouvi-falar">
+              <span class="option-indicator">D</span>
+              <span class="option-text">Nunca tinha ouvido falar.</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TELA 7: Evidência Visual 2
+           ========================================== -->
+      <section class="screen" id="screen-7" data-step="7" aria-labelledby="title-step-7">
+        <div class="screen-content visual-layout">
+          <h2 class="visual-headline" id="title-step-7">
+            Ter um filho e estar noivo comprova união estável?
+          </h2>
+
+          <!-- Visual: Ícone de Aliança + Ícone de Bebê -->
+          <div class="icons-evidence-container" aria-hidden="true">
+            <div class="evidence-icon-circle">
+              <!-- Ícone de Alianças Entrelaçadas -->
+              <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="12" r="6"></circle>
+                <circle cx="15" cy="12" r="6"></circle>
+              </svg>
+              <span class="icon-caption">Noivado</span>
+            </div>
+
+            <div class="evidence-plus">+</div>
+
+            <div class="evidence-icon-circle">
+              <!-- Ícone de Bebê / Carrinho de Bebê -->
+              <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                <path d="M16 19a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                <path d="M2 5h3.5l2.6 10h10.9l2-7h-14"></path>
+                <path d="M9 11a3 3 0 1 0 6 0"></path>
+              </svg>
+              <span class="icon-caption">Filho</span>
+            </div>
+          </div>
+
+          <div class="callout-box">
+            <div class="callout-alert">NÃO NECESSARIAMENTE!</div>
+            <p class="callout-text">
+              O Superior Tribunal de Justiça (STJ) confirmou esse entendimento em <strong>outubro de 2026</strong>.
+            </p>
+            <div class="source-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              <span>Fonte: STJ, 21/10/2026</span>
+            </div>
+          </div>
+
+          <div class="cta-actions">
+            <button type="button" class="btn-primary" data-action="next">
+              <span>CONTINUAR</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TELA 8: Pergunta 5
+           ========================================== -->
+      <section class="screen" id="screen-8" data-step="8" aria-labelledby="title-step-8">
+        <div class="screen-content question-layout">
+          <h2 class="question-title" id="title-step-8">
+            O que mais preocupa você?
+          </h2>
+          <p class="question-hint">Toque na sua maior preocupação atual:</p>
+
+          <div class="options-grid" role="group" aria-label="Opções para a pergunta 5">
+            <button type="button" class="quiz-option" data-value="perder-patrimonio">
+              <span class="option-indicator">A</span>
+              <span class="option-text">Perder parte do meu patrimônio.</span>
+            </button>
+            <button type="button" class="quiz-option" data-value="nao-conhecer-direitos">
+              <span class="option-indicator">B</span>
+              <span class="option-text">Não conhecer meus direitos.</span>
+            </button>
+            <button type="button" class="quiz-option" data-value="problemas-separacao">
+              <span class="option-indicator">C</span>
+              <span class="option-text">Ter problemas em uma separação.</span>
+            </button>
+            <button type="button" class="quiz-option" data-value="comprovar-relacao">
+              <span class="option-indicator">D</span>
+              <span class="option-text">Não saber como comprovar a relação.</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           TELA 9: Conversão / Oferta Final
+           ========================================== -->
+      <section class="screen" id="screen-9" data-step="9" aria-labelledby="title-step-9">
+        <div class="screen-content conversion-layout">
+          
+          <!-- Cabeçalho do Resultado -->
+          <div class="conversion-header">
+            <div class="badge-tag gold-badge">SEU RESULTADO</div>
+            <h1 class="conversion-headline-highlight" id="title-step-9">
+              Você precisa conhecer melhor seus direitos!
+            </h1>
+            <p class="conversion-intro-text">
+              Seu relacionamento envolve questões que merecem atenção, principalmente quando o assunto é patrimônio, união estável e separação.
+            </p>
+            <h2 class="conversion-subheading-bridge">
+              E nós preparamos um guia<br>para ajudar você!
+            </h2>
+          </div>
+
+          <!-- Mockup Oficial e Sofisticado do Guia Prático -->
+          <div class="book-mockup-container compact-mockup">
+            <div class="mockup-shadow-wrapper">
+              <img src="livro-guia-pratico.png" alt="Guia Prático: Namoro ou União Estável? - Bertolina Sueli" class="book-mockup-img" loading="eager">
+            </div>
+          </div>
+
+          <!-- Caixa de Oferta Imediata (Preço + CTA Colados ao Mockup) -->
+          <div class="immediate-offer-box">
+            <div class="offer-callout-text">Tenha acesso ao guia completo por</div>
+            <div class="price-value-container">
+              <span class="price-currency">R$</span>
+              <span class="price-number">29,90</span>
+            </div>
+            <div class="price-billing-type">Pagamento único</div>
+
+            <div class="cta-actions conversion-cta">
+              <a href="https://pay.hotmart.com/checkout-exemplo" class="btn-primary btn-checkout btn-pulse" id="btnCheckout" target="_blank" rel="noopener noreferrer">
+                <span>QUERO COMPRAR MEU GUIA</span>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Lista de Benefícios Concisa e Visual -->
+          <div class="offer-details-card concise-card">
+            <h3 class="offer-core-title">
+              30 perguntas e respostas, simples e diretas ao ponto, para você entender:
+            </h3>
+
+            <ul class="offer-benefits-list concise-list">
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Quando um namoro pode ser considerado união estável.</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Quais direitos podem existir sobre bens e patrimônio.</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>Como funcionam contratos de namoro e quais são seus limites.</span>
+              </li>
+              <li>
+                <span class="check-icon">✓</span>
+                <span>O que você precisa saber sobre separação e herança.</span>
+              </li>
+            </ul>
+
+            <div class="author-attribution">
+              <div class="author-avatar-badge">⚖️</div>
+              <div class="author-meta">
+                <strong>Conteúdo desenvolvido por<br>Bertolina Sueli</strong>
+                <span>Advogada e mediadora judicial</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Selos de Segurança e Confiança -->
+          <div class="security-badges-row">
+            <div class="security-badge-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8F6E2C" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              <span>Compra 100% Segura</span>
+            </div>
+            <div class="security-badge-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8F6E2C" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Acesso Imediato</span>
+            </div>
+            <div class="security-badge-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8F6E2C" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 8v4l3 3"></path>
+              </svg>
+              <span>Garantia de 7 Dias</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
